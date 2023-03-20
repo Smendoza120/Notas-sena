@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    Diseñe un algoritmo que solicite su nombre, sexo, edad, salario (incluyendo centavos), si tiene o no vehículo de transporte y; lo muestre en pantalla.
+    */
+
+    let nombre = prompt('Ingresa tu nombre');
+    let sexo = prompt(`Ingresa tu sexo
+    M = Masculino
+    F = Femenino`);
+    let edad = Number(prompt('Agrega tu edad'));
+    let salario = Number(prompt('Agrega tu salario'));
+    let vehiculo = prompt('¿Tienes vehiculo?');
+
+
+    alert(`
+      Tu nombre es: ${nombre}
+      Tu seso es: ${sexo === 'm' || sexo === 'M' ? 'Masculino': sexo === 'f' || sexo === 'F' ? 'Femenino' : 'Error de digitación'}
+      Tu edad es: ${edad}
+      Tu salario es de: ${salario}
+      ¿Tienes vehiculo?: ${vehiculo}
+    `)
+
+  </script>
+</body>
+</html>

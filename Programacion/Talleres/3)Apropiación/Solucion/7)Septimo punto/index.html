@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      Diseñe un algoritmo que muestre un menú: Amarillo = 1, azul = 2, rojo = 3.  Luego solicite al usuario digitar dos de estos números para descifrar la combinación. Ejemplo: 1 y 3, el resultado mostrado en pantalla (su combinación es naranja). Recuerde que el usuario puede colocar el mismo número dos veces y números fuera del rango.
+    */
+
+    alert(`------------------------ MENU ------------------------
+    Agrega 2 numeros para hacer la combinacion de colores:
+    Amarillo = 1
+    Azul = 2
+    Rojo = 3
+    `)
+
+    let firstColor = Number(prompt('Agrega el primer numero'));
+    let secondColor = Number(prompt('Agrega el segundo numero'));
+
+    if(firstColor < 3 || firstColor > 0 && secondColor < 3 || secondColor > 0){
+      if(firstColor == 1 && secondColor == 2 || firstColor == 2 && secondColor == 1){
+        alert(`La combinacion entre ${firstColor === 1 ? 'Amarillo' : firstColor === 2 ? 'Azul' : ''} y ${secondColor === 1 ? 'Amarillo' : secondColor === 2 ? 'Azul' : ''} es Verde`);
+      } else if(firstColor == 2 && secondColor == 3 || firstColor == 3 && secondColor == 2){
+        alert(`La combinacion entre ${firstColor === 2 ? 'Azul' : firstColor === 3 ? 'Rojo' : ''} y ${secondColor === 2 ? 'Azul' : secondColor === 3 ? 'Rojo' : ''} es Morado`);
+      } else if(firstColor == 1 && secondColor == 3 || firstColor == 3 && secondColor == 1){
+        alert(`La combinacion entre ${firstColor === 1 ? 'Amarillo' : firstColor === 3 ? 'Rojo' : ''} y ${secondColor === 1 ? 'Amarillo' : secondColor === 3 ? 'Rojo' : ''} es Naranja`);
+      } else if(firstColor == 1 && secondColor == 1){
+        alert(`El color es Amarillo`);
+      } else if(firstColor == 2 && secondColor == 2){
+        alert(`El color es Azul`);
+      } else if(firstColor == 3 && secondColor == 3){
+        alert(`El color es Rojo`);
+      }
+    } else {
+      alert('Datos erroneos')
+    }
+    
+  </script>
+</body>
+</html>

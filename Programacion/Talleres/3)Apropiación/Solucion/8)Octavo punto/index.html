@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <script>
+      /*
+    Diseñe un algoritmo para seleccionar un menú con 10 operaciones matemáticas básicas: suma, resta, multiplicación, división, módulo, cuadrado, raíz cuadrada, potencia, porcentaje y un número aleatorio. 
+    */
+
+      let finalizar = 1;
+      let opcion = 0;
+      let firstNumber = 0;
+      let secondNumber = 0;
+
+      do {
+        opcion = Number(
+          prompt(`
+      -------- Operaciones Matematicas --------
+      Selecciona la opreacion que deseas hacer:
+      1) Suma X
+      2) Resta X
+      3) Multiplicación x
+      4) División x
+      5) Módulo x
+      6) Cuadrado x
+      7) Raiz cuadrada x
+      8) Potencia x
+      9) Porcentaje 
+      10) Numero al azar
+      `)
+        );
+
+        switch (opcion) {
+          case 1:
+            firstNumber = Number(prompt("Digita el primer numero"));
+            secondNumber = Number(prompt("Digita el segundo numero"));
+            alert(
+              `La suma del número ${firstNumber} con el número ${secondNumber} es: ${
+                firstNumber + secondNumber
+              }`
+            );
+            break;
+          case 2:
+            firstNumber = Number(prompt("Digita el primer numero"));
+            secondNumber = Number(prompt("Digita el segundo numero"));
+            alert(
+              `La resta del número ${firstNumber} con el número ${secondNumber} es: ${
+                firstNumber - secondNumber
+              }`
+            );
+            break;
+          case 3:
+            firstNumber = Number(prompt("Digita el primer numero"));
+            secondNumber = Number(prompt("Digita el segundo numero"));
+            alert(
+              `La multiplicación del número ${firstNumber} con el número ${secondNumber} es: ${
+                firstNumber * secondNumber
+              }`
+            );
+            break;
+          case 4:
+            firstNumber = Number(prompt("Digita el dividendo"));
+            secondNumber = Number(prompt("Digita el divisor"));
+            secondNumber === 0
+              ? alert("Imposible la división por 0")
+              : alert(
+                  `La division entre el numero ${firstNumber} sobre el numero ${secondNumber} es: ${
+                    firstNumber / secondNumber
+                  }`
+                );
+            break;
+          case 5:
+            firstNumber = Number(prompt("Digita el modulo"));
+            alert(
+              `El módulo de ${firstNumber} es: ${
+                firstNumber < 0 ? firstNumber * -1 : firstNumber
+              }`
+            );
+            break;
+          case 6:
+            firstNumber = Number(prompt("Digita el numero"));
+            alert(`El cuadrado de ${firstNumber} es: ${firstNumber ** 2}`);
+            break;
+          case 7:
+            firstNumber = Number(prompt("Digita el numero"));
+            alert(
+              `La potencia de ${firstNumber} es: ${Math.sqrt(
+                firstNumber
+              ).toFixed(2)}`
+            );
+            break;
+          case 8:
+            firstNumber = Number(prompt("Digita la base"));
+            secondNumber = Number(prompt("Digita el exponente"));
+            alert(
+              `La potencia de ${firstNumber} a la ${secondNumber} es: ${
+                firstNumber ** secondNumber
+              }`
+            );
+            break;
+          case 9:
+            firstNumber = Number(prompt("Digita el porcentaje"));
+            secondNumber = Number(prompt("Digita la cantidad"));
+            alert(`El ${firstNumber}% de ${secondNumber} es: ${(firstNumber * secondNumber) / 100}`);
+            break;
+          case 10:
+            alert(`Su numero aleatorio es: ${Math.floor(Math.random() * 100)}`) 
+            break;
+          default:
+            break;
+        }
+
+        finalizar = Number(
+          prompt(`
+        ¿Quieres hacer otra operación?
+        1: Salir  0: Repetir
+      `)
+        );
+      } while (finalizar != 1);
+
+    </script>
+  </body>
+</html>
