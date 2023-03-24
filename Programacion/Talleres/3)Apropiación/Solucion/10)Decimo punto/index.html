@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Diseñe un algoritmo que encuentre el área y perímetro del material necesario para construir un cilindro con tapa también que volumen ocupara, con sus respectivas unidades y restricciones.
+    */
+
+      let repetir;
+
+      do {
+        let diametro = Number(prompt('Ingresa el diametro'));
+        let altura = Number(prompt('Ingresa la altura'));
+        let radio = diametro / 2;
+        let areaLateral = 2 * Math.PI * radio * altura;
+
+        let areaCilindro = (2 * (Math.PI * radio ** 2) + areaLateral).toFixed(
+          2
+        );
+
+        if (altura > 0 && diametro > 0) {
+          alert(`
+            El diametro de las tapas es: ${diametro}cm
+            La altura del cilindro es ${altura}cm
+            El area lateral del cilindro es: ${areaLateral.toFixed(1)}cm
+            El area del cilindro es de: ${areaCilindro}m²
+          `);
+
+          repetir = Number(
+            prompt(`
+            ¿Deseas hacer otra operación?
+            1)Si 2)No
+          `)
+          );
+        } else {
+          repetir = Number(
+            prompt(`
+            ¡Error de datos!
+            ¿Deseas hacer otra operación?
+            1)Si 2)No
+          `)
+          );
+        }
+      } while (repetir != 2);
+    </script>
+  </body>
+</html>

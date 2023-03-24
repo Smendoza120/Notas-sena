@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Diseñe un algoritmo que muestre un menú para la selección (1. Triángulo, 2. Rectángulo y 3. Círculo); luego pida los datos necesarios para la solución y muestre en pantalla el nombre de la figura, su área en unidades cuadradas y su perímetro en unidades simples. Recuerde que no existen áreas o perímetros menores o iguales a cero.
+    */
+
+      let repeat;
+
+      do {
+        let options = Number(
+          prompt(`
+    -----------MENU-----------
+    Selecciona la figura deseada
+    1) Triangulo
+    2) Rectangulo
+    3) Circulo`)
+        );
+
+        let firstSide;
+        let secondSide;
+        let thirthSide;
+        //Operaciones
+        let perimetro;
+        let area;
+
+        switch (options) {
+          case 1:
+            firstSide = Number(prompt("Digita el primer lado"));
+            secondSide = Number(prompt("Digita el segundo lado"));
+            thirthSide = Number(prompt("Digita el tercer lado"));
+
+            perimetro = firstSide + secondSide + thirthSide;
+            let semiPerimetro = perimetro / 2;
+            area = Math.sqrt(
+              semiPerimetro *
+                (semiPerimetro - firstSide) *
+                (semiPerimetro - secondSide) *
+                (semiPerimetro - thirthSide)
+            ).toFixed(1);
+
+            if (firstSide > 0 && secondSide > 0 && thirthSide > 0) {
+              alert(`
+              Tu figura es un triangulo
+              El perimetro del triangulo es: ${perimetro}
+              El area del triangulo es: ${area} cm²
+            `);
+            } else {
+              alert("Ningun lado puede ser 0 o negativo");
+            }
+
+            repeat = Number(prompt(`
+            ¿Deseas realizar otra operacion?
+            1)Si 2)No`));
+            break;
+
+          case 2:
+            firstSide = Number(prompt("Digita el primer lado"));
+            secondSide = Number(prompt("Digita el segundo lado"));
+            
+            area = firstSide * secondSide;
+            perimetro = firstSide * 2 + secondSide * 2;
+
+            if (firstSide > 0 && secondSide > 0) {
+              alert(`
+                Tu figura es un rectangulo
+                El perimetro del rectangulo es: ${perimetro}
+                El area del rectangulo es: ${area}
+              `);
+            } else {
+              alert("Ningun lado puede ser 0 o negativo");
+            }
+            repeat = Number(prompt(`
+            ¿Deseas realizar otra operacion?
+            1)Si 2)No`));
+
+            break;
+
+          case 3:
+            firstSide = Number(prompt("Digite el radio"));
+            
+            perimetro = (2 * Math.PI * firstSide).toFixed(1);
+            area = (Math.PI * firstSide ** 2).toFixed(1);
+
+            if (firstSide > 0) {
+              alert(`
+                Tu figura es un circulo 
+                El perimetro del circulo es: ${perimetro}
+                El area del circulo es: ${area}
+              `);
+            } else {
+              alert("El dato no puede ser 0 o negativo");
+            }
+            repeat = Number(prompt(`
+            ¿Deseas realizar otra operacion?
+            1)Si 2)No`));
+            break;
+
+          default:
+          repeat = Number(prompt(`
+            ¡Datos erroneos!
+            ¿Deseas realizar otra operacion?
+            1)Si 2)No`));
+            break;
+        }
+      } while (repeat != 2);
+    </script>
+  </body>
+</html>
