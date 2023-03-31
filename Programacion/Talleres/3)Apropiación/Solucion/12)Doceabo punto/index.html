@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Encuentre el tipo de triángulo que se tiene, mostrando un menú que pida si se ingresaran ángulos o lados y se dé la opción para escoger uno de los dos. Si se selecciona por ángulos la suma de los 3 ángulos debe ser 180° y si se selecciona por lados, la suma de los dos lados más cortos debe ser mayor a la longitud del lado más largo, para que sean un triángulo. Y mostrar en pantalla su triángulo es: equilátero, isósceles o escaleno; rectángulo, acutángulo u obtusángulo). Recuerde que no existen lados ni ángulos menores o iguales a cero.
+    */
+
+      let menu;
+      let continuar;
+
+      let primerAngulo, segundoAngulo, tercerAngulo;
+      let primerLado, segundoLado, tercerLado;
+
+      let sumaAngulos;
+
+      do {
+        menu = Number(
+          prompt(`
+            ----------- Menú -----------
+            ¿Que datos desdeas ingresar?
+                1)Angulos   2)Lados
+          `)
+        );
+
+        switch (menu) {
+          case 1:
+            primerAngulo = Number(prompt("Ingresa el primer algulo"));
+            segundoAngulo = Number(prompt("Ingresa el segundo algulo"));
+            tercerAngulo = Number(prompt("Ingresa el tercer algulo"));
+
+            sumaAngulos = primerAngulo + segundoAngulo + tercerAngulo;
+
+            if (sumaAngulos == 180 && 
+                primerAngulo <= 0 && 
+                segundoAngulo <= 0 && 
+                tercerAngulo <= 0) {
+              if (
+                primerAngulo == 90 ||
+                segundoAngulo == 90 ||
+                tercerAngulo == 90
+              ) {
+                alert("Triangulo rectangulo");
+              } else if (
+                primerAngulo > 90 ||
+                segundoAngulo > 90 ||
+                tercerAngulo > 90
+              ) {
+                alert("Triangulo Obtusangulo");
+              } else if (
+                primerAngulo < 90 ||
+                segundoAngulo < 90 ||
+                tercerAngulo < 90
+              ) {
+                alert("Triangulo acutángulo");
+              }
+            } else {
+              alert("No es un triangulo");
+            }
+
+            continuar = Number(
+              prompt(`
+              ¿Deseas realizar otra consulta?
+              1)Si    2)No
+            `)
+            );
+
+            break;
+
+          case 2:
+            primerLado = Number(prompt("Ingresa el primer lado"));
+            segundoLado = Number(prompt("Ingresa el segundo lado"));
+            tercerLado = Number(prompt("Ingresa el tercer lado"));
+
+            if (
+              primerLado + segundoLado > tercerLado ||
+              primerLado + tercerLado > segundoLado ||
+              segundoLado + tercerLado > primerLado && 
+              primerAngulo <= 0 && 
+              segundoAngulo <= 0 && 
+              tercerAngulo <= 0
+            ) {
+              if (
+                primerLado === segundoLado &&
+                primerLado === tercerLado &&
+                segundoLado === tercerLado
+              ) {
+                alert("Triangulo equilátero");
+              } else if (
+                primerLado === segundoLado ||
+                primerLado === tercerLado ||
+                segundoLado === tercerLado
+              ) {
+                alert("Triangulo isósceles");
+              } else if (
+                primerLado !== segundoLado ||
+                primerLado !== tercerLado ||
+                segundoLado !== tercerLado
+              ) {
+                alert("Triangulo escaleno");
+              }
+            } else {
+              alert("No es un triangulo");
+            }
+
+            continuar = Number(
+              prompt(`
+              ¿Deseas realizar otra consulta?
+              1)Si    2)No
+            `)
+            );
+
+          break;
+
+          default:
+            alert("Error de digitación");
+            continuar = Number(
+              prompt(`
+              ¿Deseas realizar otra consulta?
+              1)Si    2)No
+            `)
+            );
+            break;
+        }
+      } while (continuar != 2);
+    </script>
+  </body>
+</html>

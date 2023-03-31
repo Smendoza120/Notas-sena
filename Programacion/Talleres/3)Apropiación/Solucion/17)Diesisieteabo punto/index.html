@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1 id="resultado"></h1>
+
+    <script>
+      //Solicite la cantidad de números que se desea ver de la serie de Fibonacci.
+
+      function fibonacci(valor) {
+        let numeros = [0, 1];
+
+        for (let i = 2; i <= valor; i++) {
+          numeros[i] = numeros[i - 1] + numeros[i - 2]; 
+        }
+
+        document.getElementById("resultado").innerHTML = `Los ${valor} primeros numeros de serie Fibonacci son: ${numeros.join(", ")}`;
+      }
+
+      fibonacci(5);
+    </script>
+  </body>
+</html>

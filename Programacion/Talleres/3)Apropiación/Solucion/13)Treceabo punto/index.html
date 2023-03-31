@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Muestre dos números aleatorios del 1 al 6 (como los dados), de sacar dos números pares (1,1 o 2,2 o 3,3 o 4,4 o 5,5 o 6,6) saldrá un mensaje en pantalla que dice lanzar de nuevo, de lazar en dos ocasiones más y de nuevo sean pares, saldrá un mensaje en pantalla ¡Saca una ficha!, de no sacar pares saldrá en pantalla un mensaje ¡Lanza de nuevo! (como en el juego parques).
+    */
+
+      let primerRandom;
+      let segundoRandom;
+
+      let fichas = 4;
+      let lanzamientos = 0;
+      let repetir = 1;
+
+      do {
+
+        primerRandom = Math.floor((Math.random() * 6) + 1);
+        segundoRandom = Math.floor((Math.random() * 6) + 1);
+
+        if (primerRandom === segundoRandom) {
+          alert(`
+            Sacaste par, lanza de nuevo
+
+              Primer Dado: ${primerRandom}
+              Segundo Dado: ${segundoRandom}
+            `);
+          lanzamientos++;
+          if (lanzamientos === 3) {
+            fichas--;
+            fichas === 0
+              ? alert("Sacaste todas las fichas, ganaste!")
+              : fichas === 1
+              ? alert(`Sacaste una ficha, te queda ${fichas}`)
+              : alert(`Sacaste una ficha, te quedan ${fichas}`);
+            lanzamientos = 0;
+          }
+          if(fichas === 0){
+            repetir == 1;
+          }
+        } else {
+          alert("No sacaste par, lanza de nuevo");
+          lanzamientos = 0;
+          repetir = Number(prompt(`
+            ¿Quieres tirar los dados nuevamente?
+              1)Si 2)No
+
+              Primer Dado: ${primerRandom}
+              Segundo Dado: ${segundoRandom}
+            `));
+        }
+      } while (repetir != 2);
+
+    </script>
+  </body>
+</html>

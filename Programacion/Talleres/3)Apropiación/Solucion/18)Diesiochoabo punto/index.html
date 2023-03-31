@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Encuentre el factorial de un número del 0 al 12, si lo supera, el factorial es infinito.
+
+      function numeroFactorial(numero) {
+        let acumulado = 1;
+        let resultado;
+
+        for (let i = 1; i <= numero; i++) {
+          acumulado *= i;
+        }
+
+        return numero > 12
+          ? alert("El factorial es infinito")
+          : alert(`El factorial de ${numero}! es: ${acumulado}`);
+      }
+
+      let repetir;
+      let factorial;
+
+      do {
+        factorial = Number(prompt("Digita el factorial que deseas encontrar"));
+        numeroFactorial(factorial);
+        repetir = Number(
+          prompt(`
+        ¿Quieres calcular otro factorial?
+        1)Si 2)No
+      `)
+        );
+      } while (repetir !== 2);
+    </script>
+  </body>
+</html>
