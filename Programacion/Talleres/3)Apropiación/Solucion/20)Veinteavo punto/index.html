@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      Solicite un número, lo descomponga y muestre en pantalla cuántos dígitos tiene.
+    */
+
+    let numero = prompt('Ingrese un numero');
+    let copia = numero;
+
+    let unidades = numero % 10;
+    let digitos = 1;
+    numero = Math.floor(numero / 10);
+
+    while (numero !== 0){
+      const cifra = numero % 10;
+      digitos++;
+      numero = Math.floor(numero / 10);
+    }
+
+    alert(`El numero ${copia} tiene ${digitos} digitos.`);
+
+  </script>
+</body>
+</html>

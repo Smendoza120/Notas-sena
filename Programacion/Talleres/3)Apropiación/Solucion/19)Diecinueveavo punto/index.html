@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Solicite una acción y que muestre 6 números aleatorios del 1 al 45 sin repetirse y organizados de menor a mayor (baloto).
+    */
+
+      let baloto = [];
+      let numero;
+      let repetir = 2;
+
+      do {
+        for (let i = 0; i < 6; i++) {
+          numero = Math.floor(Math.random() * 44) + 1;
+          baloto.push(numero);
+        }
+        console.log(baloto.sort((a, b) => a - b));
+        alert(`
+        Estos son los resultados de la loteria de Boyacá
+        ${baloto}
+        `);
+
+        repetir = Number(
+          prompt(`
+        ¿Desea saber otro resultado?
+        1)Si 2)No
+        `)
+        );
+        baloto = [];
+      } while (repetir != 2);
+    </script>
+  </body>
+</html>
