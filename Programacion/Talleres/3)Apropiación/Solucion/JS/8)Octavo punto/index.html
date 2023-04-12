@@ -8,8 +8,8 @@
   </head>
   <body>
     <script>
-      /*
-    Diseñe un algoritmo para seleccionar un menú con 10 operaciones matemáticas básicas: suma, resta, multiplicación, división, módulo, cuadrado, raíz cuadrada, potencia, porcentaje y un número aleatorio. 
+    /*
+      Diseñe un algoritmo para seleccionar un menú con 10 operaciones matemáticas básicas: suma, resta, multiplicación, división, módulo, cuadrado, raíz cuadrada, potencia, porcentaje y un número aleatorio. 
     */
 
       let finalizar = 1;
@@ -22,14 +22,14 @@
           prompt(`
       -------- Operaciones Matematicas --------
       Selecciona la opreacion que deseas hacer:
-      1) Suma X
-      2) Resta X
-      3) Multiplicación x
-      4) División x
-      5) Módulo x
-      6) Cuadrado x
-      7) Raiz cuadrada x
-      8) Potencia x
+      1) Suma 
+      2) Resta 
+      3) Multiplicación 
+      4) División 
+      5) Módulo 
+      6) Cuadrado 
+      7) Raiz cuadrada 
+      8) Potencia 
       9) Porcentaje 
       10) Numero al azar
       `)
@@ -77,8 +77,8 @@
           case 5:
             firstNumber = Number(prompt("Digita el modulo"));
             alert(
-              `El módulo de ${firstNumber} es: ${
-                firstNumber < 0 ? firstNumber * -1 : firstNumber
+              `El módulo de ${firstNumber} entre ${secondNumber} es: ${
+                firstNumber % secondNumber
               }`
             );
             break;

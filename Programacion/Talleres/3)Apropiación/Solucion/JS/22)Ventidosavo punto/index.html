@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      Llene un vector de dimensión 5 con las palabras nombre, apellido, edad, estado y teléfono; y llene una matriz de 4 por 5 con los datos de sus compañeros. Luego de llenar la matriz, la muestre en pantalla de forma organizada.
+    */
+
+    let solicitudDatos = ["Nombre", "Apellido", "Edad", "Estado", "Telefono"];
+    let matriz = [];
+    let datos;
+
+    for (let i = 0; i < 4; i++) {
+      matriz[i] = [];
+      for (let j = 0; j < 5; j++) {
+        datos = prompt(`Ingresa tu ${solicitudDatos[j]}`);
+        matriz[i][j] = datos;
+      }
+    }
+
+    for (let i = 0; i < 4; i++) {
+      console.log(`Compañero ${i + 1}`);
+      for (let j = 0; j < 5; j++) {
+        console.log(`${solicitudDatos[j]}: ${matriz[i][j]}`)
+      }
+      console.log('-------')
+    }
+  </script>
+</body>
+
+</html>

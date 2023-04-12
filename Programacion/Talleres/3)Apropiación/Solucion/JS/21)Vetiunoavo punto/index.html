@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      Llene un vector de 10 posiciones con un ciclo for, luego imprima con otro ciclo el vector mostrando el índice, la posición y el valor.
+    */
+
+    let vector = [];
+
+    for(let i = 0; i < 10; i++){
+      vector[i] = i * 2;
+    }
+
+    for(let i = 0; i < vector.length; i++){
+      alert(`Indice: ${i}, Posicion: ${i + 1}, Valor: ${vector[i]}`);
+    }
+
+  </script>
+</body>
+</html>

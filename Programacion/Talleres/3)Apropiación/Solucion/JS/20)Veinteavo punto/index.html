@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      Solicite 2 números por teclado, luego indique al usuario si desea la serie par o impar, después muestre en pantalla la serie par o impar según la elección desde el número menor que se ingresó al inicio hasta el número mayor.  
+    */
+
+    function pares(primerNumero, segundoNumero) {
+      if (primerNumero > segundoNumero) {
+        alert(`Los numeros pares desde ${segundoNumero} hasta ${primerNumero} son:`);
+        for (let i = segundoNumero; i < primerNumero; i++) {
+          if (i % 2 === 0) {
+            alert(`${i}`)
+          }
+        }
+      } else if (segundoNumero > primerNumero) {
+        alert(`Los numeros pares desde ${primerNumero} hasta ${segundoNumero} son:`);
+        for (let i = primerNumero; i < segundoNumero; i++) {
+          if (i % 2 === 0) {
+            alert(`Es par ${i}`)
+          }
+        }
+      }
+    }
+
+    function impares(primerNumero, segundoNumero) {
+      if (primerNumero > segundoNumero) {
+        alert(`Los numeros impares desde ${segundoNumero} hasta ${primerNumero} son:`);
+        for (let i = segundoNumero; i < primerNumero; i++) {
+          if (i % 2 !== 0) {
+            alert(`${i}`)
+          }
+        }
+      } else if (segundoNumero > primerNumero) {
+        alert(`Los numeros impares desde ${primerNumero} hasta ${segundoNumero} son:`);
+        for (let i = primerNumero; i < segundoNumero; i++) {
+          if (i % 2 !== 0) {
+            alert(`Es par ${i}`)
+          }
+        }
+      }
+    }
+
+    let repetir;
+    let serie;
+    let primerNumero;
+    let segundoNumero;
+
+    do {
+
+      serie = Number(prompt(`
+      ------- Menú -------
+      Elije la secuencia.
+      1)Par 2)Impar
+      `));
+
+      primerNumero = Number(prompt(`Digita un número entero`));
+      segundoNumero = Number(prompt(`Digita otro número entero`));
+
+      switch (serie) {
+        case 1:
+          pares(primerNumero, segundoNumero);
+          repetir = Number(prompt(`
+          ¿Deseas hacer otra operación?
+          1)Si 2)No
+          `));
+          break;
+
+        case 2:
+          impares(primerNumero, segundoNumero);
+          repetir = Number(prompt(`
+          ¿Deseas hacer otra operación?
+          1)Si 2)No
+          `));
+        default:
+          repetir = Number(prompt(`
+          Opción incorrecta ¿Deseas hacer otra operación?
+          1)Si 2)No
+          `));
+          break;
+      }
+    } while (repetir !== 2);
+
+  </script>
+</body>
+
+</html>
